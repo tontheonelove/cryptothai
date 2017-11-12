@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<html>
-<body>
-
-<p id="demo"></p>
-
 <?php
     $content=file_get_contents("https://bx.in.th/api/");  // add your url which contains json file
     $json = json_decode($content, true);
@@ -16,6 +10,3 @@
     }
   
   ?>
-
-</body>
-</html>
