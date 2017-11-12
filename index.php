@@ -1,8 +1,7 @@
 <?php
+$access_token = 'ZMlpKtPOK+GFSR9KUPLZsGGf1HHkB/iN06JRdnavE4zVRlTCKYtYsiaqinwjT+Fi6/1Ga9cm8c7in90FrdkxtC/aWTqI7uHe7bStyTozfyHhDaAK1f9vhy9DMm6RgRJ53buwL5XL7znyluelO1wTjwdB04t89/1O/w1cDnyilFU=';
 
-    $access_token = 'aEQQxE/yofLruGCCs2wPmOwGtWEZNYsn7qbwwj1b4Cq/bxPw6hW8rJ28dvu1Lw2O6/1Ga9cm8c7in90FrdkxtC/aWTqI7uHe7bStyTozfyFi6EovFjw/rDGP66+e5Qb0B5ItHtXJ0+t7MQ61Cl3WTwdB04t89/1O/w1cDnyilFU='
-    
-        // Get POST body content
+// Get POST body content
 $content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
