@@ -1,12 +1,12 @@
 <?php
-    $content=file_get_contents("https://bx.in.th/api/");  // add your url which contains json file
+    $content=file_get_contents("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=THB");  // add your url which contains json file
     $json = json_decode($content, true);
    // print_R($json);
     $count=count($json);
-    echo'<table><th>pairing_id</th><th>change</th><th>last_price</th><th>volume_24hours</th>';
+    echo'<table><th>เหรียญ</th><th>อัตราขึ้น/ลง</th><th>ราคา</th>';
     for($i=0;$i<$count;$i++)
     {
-      echo'<tr><td>'.$json[$i]['pairing_id'].'</td><td>'.$json[$i]['change'].'</td><td>'.$json[$i]['last_price'].'</td><td>'.$json[$i]['volume_24hours'].'</td></tr>';
+      echo'<tr><td>'.$json[$i]['name'].'</td><td>'.$json[$i]['percent_change_24h'].'</td><td>'.$json[$i]['price_thb'].'</td></tr>';
     }
   
 echo'</table>'
