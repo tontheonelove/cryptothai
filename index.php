@@ -17,13 +17,13 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$list = array('bch'=>'bitcoin-cash','btc'=>'bitcoin','evx'=>'everex','eth'=>'ethereum','omg'=>'omisego','zec'=>'zcash','xrp'=>'ripple','ltc'=>'litecoin');
+			$list = array('bch'=>'bitcoin-cash','btc'=>'bitcoin','evx'=>'everex','eth'=>'ethereum','omg'=>'omisego','zec'=>'zcash','xrp'=>'ripple','ltc'=>'litecoin','gno'=>'gnosis-gno');
 			if($list[$text]){
 				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/".$list[$text]."/?convert=THB"),true);
 				$count=count($json);
 				$text='';
 				for($i=0;$i<$count;$i++){
-					$text=$text+'เหรียญ : '.$json[$i]['name']."\nอัตราขึ้น-ลง วันนี้ : ".$json[$i]['percent_change_24h']."\nราคา(บาท) :".$json[$i]['price_thb']."\nVolume 24 ชั่วโมง :".$json[$i]['24h_volume_thb']."\n";
+					$text=$text+'เหรียญ : '.$json[$i]['name']."\nอัตราขึ้น-ลง วันนี้ : ".$json[$i]['percent_change_24h']."\nราคา(บาท) :".$json[$i]['price_thb']."\nVolume วันนี้ :".$json[$i]['24h_volume_thb']."\n";
 				}
 				$messages = [
 					'type' => 'text',
