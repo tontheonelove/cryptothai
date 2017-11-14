@@ -1,8 +1,8 @@
 <?php
-$access_token = 'ZMlpKtPOK+GFSR9KUPLZsGGf1HHkB/iN06JRdnavE4zVRlTCKYtYsiaqinwjT+Fi6/1Ga9cm8c7in90FrdkxtC/aWTqI7uHe7bStyTozfyHhDaAK1f9vhy9DMm6RgRJ53buwL5XL7znyluelO1wTjwdB04t89/1O/w1cDnyilFU=';
+$access_token = '8RoaweEYghpr9qq/kbPxI3K8NL4nQQw33ksOMGHoqJiFJZf7f1IonhS7nPM+j5dx6/1Ga9cm8c7in90FrdkxtC/aWTqI7uHe7bStyTozfyHLNQIS294lkLkHm9IZXBSvacmv7/yFYEivA79VYhTKygdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
-$content = file_get_contents('price.php');
+$content = file_get_contents('////');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
