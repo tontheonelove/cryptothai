@@ -30,6 +30,8 @@ if (!is_null($events['events'])) {
 				'type' => 'text',
 				'text' => $text
 				
+			];
+				
 				
 				// Build message to reply back
 			if($text2=='BTC'){
