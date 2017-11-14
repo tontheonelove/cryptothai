@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 				
 				
 				// Build message to reply back
-			if($text=='BTC'){
+			if($text2=='BTC'){
 				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=THB"),true);  // add your url which contains json file
 
 				$count=count($json);
@@ -43,7 +43,7 @@ if (!is_null($events['events'])) {
 			}
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $text2
 				
 				
 			];
