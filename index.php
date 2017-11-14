@@ -29,6 +29,23 @@ if (!is_null($events['events'])) {
 			$messages = [
 				'type' => 'text',
 				'text' => $text
+				
+				
+				// Build message to reply back
+			if($text=='BTC'){
+				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=THB"),true);  // add your url which contains json file
+
+				$count=count($json);
+				$text='';
+				for($i=0;$i<$count;$i++){
+				$text=$text+'เหรียญ : '.$json[$i]['name']."\nขึ้น-ลง : ".$json[$i]['percent_change_24h']."\nราคาล่าสุด :".$json[$i]['price_thb']."\n";
+				}
+			}
+			$messages = [
+				'type' => 'text',
+				'text' => $text
+				
+				
 			];
 
 			// Make a POST Request to Messaging API to reply to sender
