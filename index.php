@@ -23,7 +23,7 @@ if (!is_null($events['events'])) {
 				$count=count($json);
 				$text='';
 				for($i=0;$i<$count;$i++){
-					$text=$text+'เหรียญ : '.$json[$i]['name']."\nอัตรา % ขึ้น-ลง 24 ชั่วโมง : ".$json[$i]['percent_change_24h']."\nราคาล่าสุด(บาท) :".$json[$i]['price_thb']."\nVolume 24 ชั่วโมง :".$json[$i]['24h_volume_thb']."\n";
+					$text=$text+'เหรียญ : '.$json[$i]['name']."\nอัตราขึ้น-ลง วันนี้ : ".$json[$i]['percent_change_24h']."\nราคา(บาท) :".$json[$i]['price_thb']."\nVolume 24 ชั่วโมง :".$json[$i]['24h_volume_thb']."\n";
 				}
 				$messages = [
 					'type' => 'text',
