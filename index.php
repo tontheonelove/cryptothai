@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			$list = array('bch'=>'bitcoin-cash','btc'=>'bitcoin','evx'=>'everex','eth'=>'ethereum','omg'=>'omisego','zec'=>'zcash','xrp'=>'ripple','ltc'=>'litecoin','gno'=>'gnosis-gno','dash'=>'dash');
+			$list = array('bch'=>'bitcoin-cash','btc'=>'bitcoin','evx'=>'everex','eth'=>'ethereum','omg'=>'omisego','zec'=>'zcash','xrp'=>'ripple','ltc'=>'litecoin','gno'=>'gnosis-gno','dash'=>'dash','neo'=>'neo');
 			if($list[$text]){
 				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/".$list[$text]."/?convert=THB"),true);
 				$count=count($json);
