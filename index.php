@@ -19,10 +19,10 @@ if (!is_null($events['events'])) {
 			// Build message to reply back
 			$list = {
 				'BCH':'bitcoin-cash',
-				'BTC':'bitcoin',
-			}
-			if($list[$text]){
-				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/".$list[$text]."/?convert=THB"),true);
+				'BTC':'bitcoin'
+			};
+			if($text=='BCH'){
+				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/?convert=THB"),true);
 				$count=count($json);
 				$text='';
 				for($i=0;$i<$count;$i++){
@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 				
 			$messages = [
 				'type' => 'text',
-				'text' => $list[$text]? $list[$text] : 'test'
+				'text' => $text
 				
 			];
 				
