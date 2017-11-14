@@ -32,30 +32,13 @@ if (!is_null($events['events'])) {
 				
 			];
 				
-				
-				// Build message to reply back
-			if($text2=='BTC'){
-				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=THB"),true);  // add your url which contains json file
-
-				$count=count($json);
-				$text='';
-				for($i=0;$i<$count;$i++){
-				$text2=$text2+'เหรียญ : '.$json[$i]['name']."\nขึ้น-ลง : ".$json[$i]['percent_change_24h']."\nราคาล่าสุด :".$json[$i]['price_thb']."\n";
-				}
-			}
-			$messages2 = [
-				'type' => 'text',
-				'text' => $text2
-				
-				
-			];
 
 			// Make a POST Request to Messaging API to reply to sender
 			$url = 'https://api.line.me/v2/bot/message/reply';
 			$data = [
 				'replyToken' => $replyToken,
 				'messages' => [$messages],
-				'messages' => [$messages2],
+			
 			];
 			$post = json_encode($data);
 			$headers = array('Content-Type: application/json', 'Authorization: Bearer ' . $access_token);
