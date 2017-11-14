@@ -18,12 +18,18 @@ if (!is_null($events['events'])) {
 
 			// Build message to reply back
 			if($text=='BCH'){
-				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/?convert=THB"),true);  // add your url which contains json file
+				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/?convert=THB"),true);
+				$json2=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/bitcoin/?convert=THB"),true);// add your url which contains json file
 
 				$count=count($json);
+				$count2=count($json2);
 				$text='';
 				for($i=0;$i<$count;$i++){
 				$text=$text+'เหรียญ : '.$json[$i]['name']."\nขึ้น-ลง : ".$json[$i]['percent_change_24h']."\nราคาล่าสุด :".$json[$i]['price_thb']."\n";
+				}
+				
+				for($i2=0;$i<$count2;$i2++){
+				$text=$text+'เหรียญ : '.$json2[$i2]['name']."\nขึ้น-ลง : ".$json2[$i2]['percent_change_24h']."\nราคาล่าสุด :".$json2[$i2]['price_thb']."\n";
 				}
 			}
 			$messages = [
