@@ -17,7 +17,7 @@ if (!is_null($events['events'])) {
 			$replyToken = $event['replyToken'];
 
 			// Build message to reply back
-			if($message=='BCH'){
+			if($text=='BCH'){
 				$json=json_decode(file_get_contents("https://api.coinmarketcap.com/v1/ticker/bitcoin-cash/?convert=THB"),true);  // add your url which contains json file
 
 				$count=count($json);
