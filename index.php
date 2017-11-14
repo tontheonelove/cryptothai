@@ -2,7 +2,7 @@
 $access_token = '8RoaweEYghpr9qq/kbPxI3K8NL4nQQw33ksOMGHoqJiFJZf7f1IonhS7nPM+j5dx6/1Ga9cm8c7in90FrdkxtC/aWTqI7uHe7bStyTozfyHLNQIS294lkLkHm9IZXBSvacmv7/yFYEivA79VYhTKygdB04t89/1O/w1cDnyilFU=';
 
 // Get POST body content
-$content = file_get_contents('////');
+$content = file_get_contents('php://input');
 // Parse JSON
 $events = json_decode($content, true);
 // Validate parsed JSON data
