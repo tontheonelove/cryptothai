@@ -32,7 +32,7 @@ if (!is_null($events['events'])) {
 				
 			$messages = [
 				'type' => 'text',
-				'text' => $text
+				'text' => $list[$text]? $list[$text] : 'test'
 				
 			];
 				
